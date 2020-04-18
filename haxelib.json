@@ -1,0 +1,11 @@
+{
+	"name": "WebAssets",
+	"url": "https://github.com/VolkovRA/WebAssets/blob/master/README.md",
+	"license": "MIT",
+	"tags": ["assets", "html5", "js", "web"],
+	"description": "Simple web assets manager for Haxe",
+	"version": "1.0.0",
+	"releasenote": "Release",
+	"contributors": ["VolkovRA"],
+	"classPath": "lib"
+}
