@@ -135,6 +135,33 @@ class Assets
 	}
 	
 	/**
+	 * Получить контейнер загружаемых данных.
+	 * Возвращает контейнер загружаемых данных по указанному ID или null, если такого ID нет.
+	 * @param	id ID Загружаемых ресурсов.
+	 * @return	Контейнер с загружаемыми данными.
+	 */
+	public inline function getItem(id:String):Resource {
+		return untyped data[id];
+	}
+	
+	/**
+	 * Удалить загруженные данные.
+	 * Возвращает true, если данные по указанному ID удалены.
+	 * Этот метод не прерывает уже начатую загрузку, а просто удаляет ссылку для сбора мусора.
+	 * @param	id ID Загружаемых ресурсов.
+	 * @return	True, если ресурс с указанным ID был удалён.
+	 */
+	public function remove(id:String):Bool {
+		var item = getItem(id);
+		if (item == null)
+			return false;
+		
+		Syntax.code("delete {0}[{1}];", data, id); // for start
+		
+		return true;
+	}
+	
+	/**
 	 * Загрузить ресурс.
 	 * Сразу начинает процесс загрузки указанного ресурса.
 	 * @param	id		ID Ресурса.
