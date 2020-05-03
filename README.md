@@ -38,7 +38,7 @@ class Main
 1. Установите haxelib, чтобы можно было использовать библиотеки Haxe.
 2. Выполните в терминале команду, чтобы установить библиотеку WebAssets глобально себе на локальную машину:
 ```
-haxelib git WebAssets https://github.com/VolkovRA/WebAssets.git master
+haxelib git webassets https://github.com/VolkovRA/WebAssets.git master
 ```
 Синтаксис команды:
 ```
@@ -50,7 +50,7 @@ haxelib git minject git@github.com:massiveinteractive/minject.git v2          # 
 3. Добавьте в свой проект библиотеку WebAssets, чтобы использовать её в коде. Если вы используете HaxeDevelop, то просто добавьте в файл .hxproj запись:
 ```
 <haxelib>
-	<library name="WebAssets" />
+	<library name="webassets" />
 </haxelib>
 ```
 
