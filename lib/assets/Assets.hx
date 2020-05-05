@@ -2,6 +2,7 @@ package assets;
 
 import js.Browser;
 import js.Syntax;
+import js.lib.Error;
 import js.html.ErrorEvent;
 import js.html.ProgressEvent;
 import js.html.XMLHttpRequest;
@@ -187,7 +188,8 @@ class Assets
      * Начать загрузку всех ресурсов.
      * - Инициирует загрузку для всех новых, добавленных ресурсов в менджер.
      * - Повторный вызов игнорируется, если в менеджере нет новых ресурсов.
-     * - Используйте колбеки менеджера ресурсов для получения уведомления о ходе загрузки.
+     * 
+     * Используйте колбеки менеджера ресурсов для получения уведомления о ходе загрузки.
      */
     public function load():Void {
         var key = null;
@@ -236,6 +238,10 @@ class Assets
 
             if (timeout == 0)
                 timeout = Browser.window.setTimeout(update, 50);
+
+            // 404 and other:
+            if (res.xhr.status >= 400 && onError != null)
+                onError(new Error(res.xhr.status + " (" + res.xhr.statusText + ")" + (res.xhr.responseURL == null ? "" : (" " + res.xhr.responseURL))), res);
         };
 
         res.xhr.open("GET", res.url, true);
