@@ -1,6 +1,6 @@
 --class-path lib 
 --class-path src 
 -main Main
--dce full
+#-dce no
 -js "bin/index.js"
 -debug
