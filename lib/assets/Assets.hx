@@ -31,7 +31,7 @@ class Assets
 
     /**
      * Глобальное хранилище ресурсов по умолчанию.
-     * - Является общим хранилищем для всей web страницы, хранится в `window.Assets`.
+     * - Является общим хранилищем для всей web страницы, хранится в `window.assets`.
      * - Хранилище инициализируется при первом доступе к нему.
      * - Через это свойство вы можете получить доступ к ресурсам, загруженных **другим** Haxe приложением.
      * 
@@ -40,10 +40,10 @@ class Assets
     static public var shared(get, never):Assets;
 
     static function get_shared():Assets {
-        var v:Assets = untyped Browser.window.Assets;
+        var v:Assets = untyped Browser.window.assets;
         if (v == null) {
             v = new Assets();
-            untyped Browser.window.Assets = v;
+            untyped Browser.window.assets = v;
         }
 
         return v;
