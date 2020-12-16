@@ -76,6 +76,6 @@ typedef Manifest =
      * ---
      * Требуемая библиотека для локализаций: https://github.com/VolkovRA/WebL10n
      */
-    @:optional var l10ns:Array<assets.l10n.L10nParams>;
+    @:optional var l10n:Array<assets.l10n.L10nParams>;
     #end
 }
