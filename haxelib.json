@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"tags": ["assets", "html5", "js", "web"],
 	"description": "Simple web assets manager for Haxe",
-	"version": "2.1.1",
+	"version": "3.0.0",
 	"releasenote": "Release",
 	"contributors": ["VolkovRA"],
 	"classPath": "lib"
