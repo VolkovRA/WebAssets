@@ -1,10 +1,10 @@
 package assets;
 
 import js.lib.Error;
+import assets.utils.Dispatcher;
 
 /**
  * Внешний ресурс.  
- * 
  * Это абстрактный, базовый класс для всех типов ресурсов. Скорее всего вы
  * захотите использовать не этот класс, а конкретный тип ресурса, например:
  * `assets.fonts.FontResource`.
@@ -21,16 +21,16 @@ class Resource<R:Resource<R,P>, P>
      * @param id ID Ресурса.
      * @param type Тип ресурса.
      * @param params Дополнительные параметры.
-     * @throws Error Менеджер не должен быть `null`.
-     * @throws Error ID Ресурса не должен быть `null`.
-     * @throws Error Тип ресурса не должен быть `null`.
-     * @throws Error Параметры ресурса не должны быть `null`.
+     * @throws Error Менеджер не должен быть `null`
+     * @throws Error ID Ресурса не должен быть `null`
+     * @throws Error Тип ресурса не должен быть `null`
+     * @throws Error Параметры ресурса не должны быть `null`
      */
     private function new(manager:Manager<R,P>, id:String, type:ResourceType, params:P) {
-        if (manager == null) throw new Error("The parent manager cannot be null");
-        if (id == null) throw new Error("Resource id cannot be null");
-        if (type == null) throw new Error("Resource type cannot be null");
-        if (params == null) throw new Error("Resource params cannot be null");
+        if (manager == null)    throw new Error("The parent manager cannot be null");
+        if (id == null)         throw new Error("Resource id cannot be null");
+        if (type == null)       throw new Error("Resource type cannot be null");
+        if (params == null)     throw new Error("Resource params cannot be null");
 
         this.manager = manager;
         this.id = id;
@@ -58,7 +58,7 @@ class Resource<R:Resource<R,P>, P>
     public var id(default, null):String;
 
     /**
-     * Тип ресурса. 🙈  
+     * Тип ресурса.  
      * Удобно использовать для быстрого определения типа этого
      * ресурса. (Класса)
      * 
@@ -73,8 +73,7 @@ class Resource<R:Resource<R,P>, P>
     public var params(default, null):P;
 
     /**
-     * Родительский менеджер ресурсов.
-     * 
+     * Родительский менеджер ресурсов.  
      * Каждый экземпляр ресурса имеет ссылку на свой родительский
      * менеджер, к которому он относится. Это используется, в
      * основном для внутренней реализации.
@@ -84,8 +83,7 @@ class Resource<R:Resource<R,P>, P>
     public var manager(default, null):Manager<R,P>;
 
     /**
-     * Событие готовности.
-     * 
+     * Событие готовности.  
      * Используется для уведомления о полном завершении загрузки и
      * разбора этого ресурса.
      * 
@@ -106,7 +104,7 @@ class Resource<R:Resource<R,P>, P>
     public var isLoading(default, null):Bool = false;
 
     /**
-     * Ресурс загружен и готов к использованию. 😃  
+     * Ресурс загружен и готов к использованию.  
      * Перед доступом к данным проверьте свойство `error` на предмет
      * наличия ошибки.
      * 
@@ -125,7 +123,7 @@ class Resource<R:Resource<R,P>, P>
     public var isDisposed(default, null):Bool = false;
 
     /**
-     * Ошибка. 🎃  
+     * Ошибка.  
      * Это свойство содержит описание ошибки, если такая произошла
      * во время загрузки или разбора данных этого ресурса.
      * 
@@ -174,6 +172,7 @@ class Resource<R:Resource<R,P>, P>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     public function toString():String {
         return "[Resource id=" + id + "]";
     }

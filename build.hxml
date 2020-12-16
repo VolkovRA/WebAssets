@@ -1,3 +1,4 @@
+-lib l10n
 --class-path lib 
 --class-path src 
 -main Main

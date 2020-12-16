@@ -1,5 +1,6 @@
 package assets;
 
+import assets.utils.Dispatcher;
 import haxe.DynamicAccess;
 import js.Syntax;
 import js.lib.Error;
@@ -30,8 +31,8 @@ import js.lib.Error;
  *   текстовых данных, ничего с ними больше не делая.
  * - `ScriptsManager` Занимается загрузкой и внедрением JavaScript
  *   кода, библиотек, фреймворков и т. д., на web страницу.
- * - `L10nsManager` Занимается загрузкой и подключением файлов
- *   локализаций для библиотеки [webl10n](https://github.com/VolkovRA/WebL10n).
+ * - `l10nManager` Занимается загрузкой и подключением файлов
+ *   локализаций для библиотеки [l10n](https://github.com/VolkovRA/WebL10n).
  * - `PixiSpritesManager` Занимается загрузкой и инициализацией
  *   графики для фреймворка [PixiJS](http://pixijs.download/release/docs/index.html).
  * - `PixiSoundsManager` Занимается загрузкой и подключением звука

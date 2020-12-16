@@ -7,11 +7,12 @@ import assets.Manifest;
 import assets.fonts.FontsManager;
 import assets.scripts.ScriptsManager;
 import assets.texts.TextsManager;
+import assets.utils.Dispatcher;
 
 /**
- * Мастер менеджер ресурсов. 🔣
+ * Мастер менеджер ресурсов.  
  * 
- * Зачем нужен
+ * Зачем это нужно
  * ------------
  * Ресурсы, используемые в игре очень разные, а способы их
  * доставки и инициализации - темболее! Этот объект выполняет
@@ -48,7 +49,7 @@ import assets.texts.TextsManager;
  *         { url:"js/lib/pixi-filters.js", },
  *         { url:"js/lib/pixi-sound.js", },
  *     ],
- *     l10ns:[
+ *     l10n:[
  *         { localization:"ru", url:"lang/ru.csv" },
  *         { localization:"en", url:"lang/en.csv" },
  *     ],
@@ -78,7 +79,7 @@ class Assets
 
         // Встроенные расширения:
         #if l10n
-        addManager(new assets.l10ns.L10nsManager());
+        addManager(new assets.l10n.L10nManager());
         #end
 
         #if pixi

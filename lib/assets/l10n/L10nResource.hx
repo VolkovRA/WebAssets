@@ -1,4 +1,4 @@
-package assets.l10ns;
+package assets.l10n;
 
 import js.Browser;
 import js.html.RequestInit;
@@ -17,7 +17,7 @@ class L10nResource extends Resource<L10nResource, L10nParams>
      * @param manager Родительский менеджер загрузчика.
      * @param params Параметры для создания ресурса.
      */
-    private function new(manager:L10nsManager, params:L10nParams) {
+    private function new(manager:L10nManager, params:L10nParams) {
         super(manager, params.id==null?params.url:params.id, ResourceType.L10N, params);
 
         if (params.url == null)
@@ -142,36 +142,4 @@ class L10nResource extends Resource<L10nResource, L10nParams>
     override public function toString():String {
         return "[L10nResource id=" + id + "]";
     }
-}
-
-/**
- * Параметры подключаемой локализации.
- * @see Библиотека `webl10n`: https://github.com/VolkovRA/WebL10n
- */
-typedef L10nParams =
-{
-    /**
-     * ID Ресурса.  
-     * Если не задан, будет использовано значение **url**.
-     */
-    @:optional var id:String;
-
-    /**
-     * ID Локализации для добавления.  
-     * Не может быть `null`
-     */
-    var localization:LocalizationID;
-
-    /**
-     * URL Адрес для загрузки данных.  
-     * Не может быть `null`
-     */
-    var url:String;
-
-    /**
-     * Дополнительные параметры для [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-     * запроса.  
-     * По умолчанию: `null`
-     */
-    @:optional var fetchParams:RequestInit;
 }

@@ -1,17 +1,15 @@
-package assets.l10ns;
-
-import assets.l10ns.L10nResource;
+package assets.l10n;
 
 /**
  * Менеджер локализаций.
  */
-class L10nsManager extends Manager<L10nResource, L10nParams>
+class L10nManager extends Manager<L10nResource, L10nParams>
 {
     /**
      * Создать менеджер для подключения локализаций.
      */
     public function new() {
-        super(ResourceType.L10N, L10nResource, "l10ns");
+        super(ResourceType.L10N, L10nResource, "l10n");
     }
 
     /**
@@ -20,6 +18,6 @@ class L10nsManager extends Manager<L10nResource, L10nParams>
      */
     @:keep
     override public function toString():String {
-        return "[L10nsManager total=" + total + "]";
+        return "[l10nManager total=" + total + "]";
     }
 }
