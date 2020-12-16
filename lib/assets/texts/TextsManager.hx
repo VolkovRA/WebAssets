@@ -19,6 +19,7 @@ class TextsManager extends Manager<TextResource, TextParams>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     override public function toString():String {
         return "[TextsManager total=" + total + "]";
     }

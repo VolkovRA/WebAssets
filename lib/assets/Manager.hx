@@ -344,6 +344,7 @@ class Manager<R:Resource<R,P>, P>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     public function toString():String {
         return '[Manager type=' + type + ', total=' + total + ']';
     }

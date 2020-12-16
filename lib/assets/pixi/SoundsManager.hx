@@ -19,6 +19,7 @@ class SoundsManager extends Manager<SoundResource, SoundParams>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     override public function toString():String {
         return "[SoundsManager total=" + total + "]";
     }

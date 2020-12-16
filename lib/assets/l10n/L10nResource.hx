@@ -139,6 +139,7 @@ class L10nResource extends Resource<L10nResource, L10nParams>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     override public function toString():String {
         return "[L10nResource id=" + id + "]";
     }

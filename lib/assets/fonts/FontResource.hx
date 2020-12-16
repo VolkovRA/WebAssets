@@ -164,6 +164,7 @@ class FontResource extends Resource<FontResource, FontParams>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     override public function toString():String {
         return "[FontResource id=" + id + "]";
     }

@@ -19,6 +19,7 @@ class FontsManager extends Manager<FontResource, FontParams>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     override public function toString():String {
         return "[FontsManager total=" + total + "]";
     }

@@ -4,11 +4,8 @@
 	"license": "MIT",
 	"tags": ["assets", "html5", "js", "web"],
 	"description": "Simple web assets manager for Haxe",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"releasenote": "Release",
 	"contributors": ["VolkovRA"],
-    "classPath": "lib",
-    "dependencies": {
-        "l10n": "git:https://github.com/VolkovRA/WebL10n.git"
-    }
+    "classPath": "lib"
 }

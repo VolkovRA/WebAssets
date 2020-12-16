@@ -1,7 +1,7 @@
 -lib l10n
+-lib pixi
 --class-path lib 
 --class-path src 
 -main Main
-#-dce no
 -js "bin/index.js"
 -debug

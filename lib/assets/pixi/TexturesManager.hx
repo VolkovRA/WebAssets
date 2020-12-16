@@ -19,6 +19,7 @@ class TexturesManager extends Manager<TextureResource, TextureParams>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     override public function toString():String {
         return "[TexturesManager total=" + total + "]";
     }

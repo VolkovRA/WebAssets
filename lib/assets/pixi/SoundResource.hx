@@ -3,12 +3,12 @@ package assets.pixi;
 import js.Browser;
 import js.html.RequestInit;
 import js.lib.Error;
-import pixi.sound.Sound;
 import pixi.sound.Sounds;
 
 /**
  * Звуковые данные.  
- * Объект занимается загрузкой и подключением звука для [PixiJS Sound](https://pixijs.io/pixi-sound/examples/).
+ * Объект занимается загрузкой и подключением звука
+ * для [PixiJS Sound](https://pixijs.io/pixi-sound/examples/).
  */
 class SoundResource extends Resource<SoundResource, SoundParams>
 {
@@ -187,6 +187,7 @@ class SoundResource extends Resource<SoundResource, SoundParams>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     override public function toString():String {
         return "[SoundResource id=" + id + "]";
     }
@@ -210,98 +211,4 @@ class SoundResource extends Resource<SoundResource, SoundParams>
 
         return params;
     }
-}
-
-/**
- * Параметры загружаемого звука.
- */
-typedef SoundParams =
-{
-    /**
-     * ID Ресурса.  
-     * Если не задан, будет использовано значение **url**.
-     */
-    @:optional var id:String;
-
-    /**
-     * URL Адрес звука.  
-     * Не может быть `null`
-     */
-    var url:String;
-
-    /**
-     * Параметры для инициализации звука.  
-     * Список этих параметров передаётся в [API PixiJS Sound](https://pixijs.io/pixi-sound/docs/PIXI.sound.html#add)
-     * при регистрации нового звука.
-     * 
-     * По умолчанию: `null`
-     */
-    @:optional var options:SoundOptions;
-
-    /**
-     * URL Адрес файла с описанием звуковых спрайтов. (Атлас)  
-     * Если не задано, звук будет подключен как единичный.  
-     * По умолчанию: `null`
-     */
-    @:optional var sprites:String;
-
-    /**
-     * Дополнительные параметры для [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-     * запроса.  
-     * Используется при загрузке данных спрайтов, если указан `sprites`.
-     * 
-     * По умолчанию: `null`
-     */
-    @:optional var fetchParams:RequestInit;
-}
-
-/**
- * Параметры звука, передаваемые в API.
- * 
- * Этот объект является частью API библиотеки PixiJS Sound.
- * Он нужен для того, что бы указать список поддерживаемых
- * параметров загрузчиком. Так как загрузчик реализует
- * собственный механизм поставки, некоторые свойства из
- * оригинального API игнорируются.
- * 
- * Этот объект перечисляет **поддерживаемые** параметры для
- * инициализации звука из [оригинального API](https://pixijs.io/pixi-sound/docs/PIXI.sound.html).
- */
-typedef SoundOptions =
-{
-    /**
-     * `true` to play after loading.  
-     * Default: `false`
-     */
-    @:optional var autoPlay:Bool;
-
-    /**
-     * `true` to disallow playing multiple layered instances at once.  
-     * Default: `false`
-     */
-    @:optional var singleInstance:Bool;
-
-    /**
-     * The amount of volume `1` = 100%.  
-     * Default: `1`
-     */
-    @:optional var volume:Float;
-
-    /**
-     * The playback rate where `1` is 100% speed.  
-     * Default: `1`
-     */
-    @:optional var speed:Float;
-
-    /**
-     * Global complete callback when play is finished.  
-     * Default: `null`
-     */
-    @:optional var complete:CompleteCallback;
-
-    /**
-     * `true` to loop the audio playback.  
-     * Default: `false`
-     */
-    @:optional var loop:Bool;
 }

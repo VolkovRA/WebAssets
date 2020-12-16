@@ -151,6 +151,7 @@ class ScriptResource extends Resource<ScriptResource, ScriptParams>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     override public function toString():String {
         return "[ScriptResource id=" + id + "]";
     }

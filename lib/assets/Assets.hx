@@ -77,14 +77,14 @@ class Assets
         addManager(new ScriptsManager());
         addManager(new TextsManager());
 
-        // Встроенные расширения:
+        // Расширения:
         #if l10n
         addManager(new assets.l10n.L10nManager());
         #end
-
+        
         #if pixi
-        addManager(new assets.pixi.TexturesManager());
         addManager(new assets.pixi.SoundsManager());
+        addManager(new assets.pixi.TexturesManager());
         #end
     }
 

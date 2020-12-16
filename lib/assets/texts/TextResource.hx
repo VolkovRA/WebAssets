@@ -124,6 +124,7 @@ class TextResource extends Resource<TextResource, TextParams>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     override public function toString():String {
         return "[TextResource id=" + id + "]";
     }

@@ -19,6 +19,7 @@ class ScriptsManager extends Manager<ScriptResource, ScriptParams>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     override public function toString():String {
         return "[ScriptsManager total=" + total + "]";
     }

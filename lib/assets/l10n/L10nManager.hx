@@ -17,6 +17,7 @@ class L10nManager extends Manager<L10nResource, L10nParams>
      * @return Строковое представление объекта.
      */
     @:keep
+    @:noCompletion
     override public function toString():String {
         return "[l10nManager total=" + total + "]";
     }
